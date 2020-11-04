@@ -70,7 +70,7 @@ summary(e_quakes$depth)
 plot(e_quakes$depth)
 plot(e_quakes$stations,e_quakes$mag,type="p")
 plot(e_quakes$stations,e_quakes$lat,type="l")
-plot(e_quakes,type="l")
+plot(e_quakes)
 
 
 
