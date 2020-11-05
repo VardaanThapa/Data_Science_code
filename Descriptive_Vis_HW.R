@@ -64,7 +64,7 @@ tail(e_quakes,10)
 e_quakes[1:10,c(3,5)]
 e_quakes[-1,]
 
-summary(e_quakes[,3])
+summary(e_quakes)
 summary(e_quakes$depth)
 
 plot(e_quakes$depth)
@@ -72,8 +72,18 @@ plot(e_quakes$stations,e_quakes$mag,type="p")
 plot(e_quakes$stations,e_quakes$lat,type="l")
 plot(e_quakes)
 
+plot(e_quakes$depth,e_quakes$stations,xlab='depth',ylab='station',
+     main='depth graph', col='green')
+
+barplot(e_quakes[,3],main = 'depth graph',
+        ylab = 'depth', col= 'red',horiz = FALSE,axes=FALSE)
+
+hist(e_quakes$depth)
+hist(e_quakes$depth,main='title',xlab='depth range',ylab='count',col='red')
 
 
+boxplot(e_quakes$depth,main='title',ylab='depth')
+summary(e_quakes$depth)
+boxplot(e_quakes[,c(3,5)],main='title')
 
-
-
+par(mfrow=c(3,3),mar=c(2,5,2,1),  las=0, bty="l")
