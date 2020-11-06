@@ -83,7 +83,27 @@ hist(e_quakes$depth,main='title',xlab='depth range',ylab='count',col='red')
 
 
 boxplot(e_quakes$depth,main='title',ylab='depth')
-summary(e_quakes$depth)
+summary(e_quakes$mag)
 boxplot(e_quakes[,c(3,5)],main='title')
 
-par(mfrow=c(3,3),mar=c(2,5,2,1),  las=0, bty="l")
+par(mfrow=c(2,3),mar=c(2,5,2,1),  las=0, bty="]")
+
+
+#variance
+var(e_quakes$depth)
+
+#standard deviation
+sd(e_quakes$depth,na.rm=FALSE)
+
+#Kernel density plot
+plot(density(e_quakes$mag))
+
+#Skewness
+library(e1071)
+
+install.packages("e1071")
+
+skewness(e_quakes$mag)
+
+#kurtosis
+kurtosis(e_quakes$depth)
