@@ -45,3 +45,35 @@ plot(airquality$Wind)
 plot(airquality$Wind)
 plot(airquality$Wind)
 par(mfrow=c(3,3),mar=c(2,5,2,1),las=0,bty="o")
+
+
+## Fights data
+library(dplyr)
+library(nycflights13)
+flts <- nycflights13::flights
+dim(flts)
+class(flts)
+flts
+
+filter(df,x==1 | y=="b")
+a
+
+arrange(df,desc(x))
+flts
+
+select(flts,-(1:3))
+
+flts["test"] <- "test"
+flts <- as.data.frame(flts)
+flts["gain"] <- flts$arr_delay - flts$dep_delay
+flts["gain"]
+
+
+flts <- mutate(flts,gained=arr_delay-dep_delay,
+       speed= distance/air_time * 60)
+
+flts$gained
+
+
+sample_n(flts,10)
+sample_frac(flts,0.001)
